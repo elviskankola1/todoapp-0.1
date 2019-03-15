@@ -21,4 +21,9 @@ class Task_model extends CI_Model
 
         $this->db->insert($this->todoTableTask, $data);
     }
+
+    public function getAllTaskModel()
+    {
+        $this->db->get($this->todoTableTask)->result();
+    }
 }
