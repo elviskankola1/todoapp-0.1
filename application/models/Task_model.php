@@ -29,6 +29,6 @@ class Task_model extends CI_Model
 
     public function countTask()
     {
-        $this->db->count_all_results($this->todoTableTask);
+        return $this->db->count_all_results($this->todoTableTask);
     }
 }
