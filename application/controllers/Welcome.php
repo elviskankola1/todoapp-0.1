@@ -6,7 +6,9 @@ class Welcome extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('welcome_message');
+        $data['task'] = $this->tache->getAllTaskModel();
+        $data['nbtask'] = $this->tache->countTask();
+        $this->load->view('welcome_message', $data);
     }
 
     public function addTask()
