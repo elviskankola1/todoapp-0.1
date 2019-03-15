@@ -19,7 +19,7 @@ class Welcome extends CI_Controller
             $todoDateDebut = $this->input->post('datedebut');
             $todoDateFin = $this->input->post('datefin');
         } else {
-            $this->load->view('');
+            $this->load->view('creer_tache');
         }
     }
 }
