@@ -11,11 +11,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 <a href="">CREER UNE TASK</a>
-<h1>LISTE TACHE <small>nb</small></h1><hr>
+<h1><?php echo $nbtask; ?> Tache(s)</h1><hr>
 <?php if ($task):?>
 <?php foreach ($task as $value):?>
-	<p><?php echo $value->description; ?></p>
-	
+	<p><?php echo $value->description; ?>     <?php echo $value->date_debut; ?>     /    <?php echo $value->date_fin; ?></p>
+
 <?php endforeach; ?>
 <?php else:?>
 	<h2>Aucune Tache</h2>
