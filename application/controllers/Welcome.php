@@ -13,7 +13,7 @@ class Welcome extends CI_Controller
 
     public function addTask()
     {
-        $this->form_validation->set_rules('description', 'description', 'trim|required|min_length[5]|max_length[12]');
+        $this->form_validation->set_rules('description', 'description', 'trim|required|min_length[5]');
         $this->form_validation->set_rules('datedebut', 'date de debut', 'trim|required');
         $this->form_validation->set_rules('datefin', 'date de la fin', 'trim|required');
         if ($this->form_validation->run()) {
