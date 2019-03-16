@@ -4,12 +4,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Task_model extends CI_Model
 {
+    //--------------------------------------------------------------------------
+    /*
+        @var string
+         #specification: attribut representant la table tache dans la db
+    */
     private $todoTableTask = 'tache';
-
-    public function __construct()
-    {
-        parent::__construct();
-    }
 
     //-------------------------------------------------------------------------
     /*
@@ -79,7 +79,15 @@ class Task_model extends CI_Model
     }
 
     //------------------------------------------------------------------------------------
+    /*
 
+        @param int $todoidTask
+        @param string $todoDescription
+        @param string $todoDateDebut
+        @param string $todoDateFin
+        #specification: update la task selon son id
+
+    */
     public function updateOneTaskModel($todoidTask, $todoDescription, $todoDateDebut, $todoDateFin)
     {
         $this->db->where('id', $todoidTask);
