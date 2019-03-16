@@ -31,4 +31,9 @@ class Task_model extends CI_Model
     {
         return $this->db->count_all_results($this->todoTableTask);
     }
+
+    public function deleteOneTaskModel($todoidTask)
+    {
+        return $this->db->where('id', $todoidTask)->delete($this->todoTableTask);
+    }
 }
