@@ -34,7 +34,6 @@ class Welcome extends CI_Controller
     {
         $todoidTask = $this->uri->segment(3);
         if ($todoidTask) {
-            $todosucces['satisfaction'] = 'une tache supprimee';
             redirect($_SERVER['HTTP_REFERER']);
         } else {
             redirect($_SERVER['HTTP_REFERER']);
