@@ -44,10 +44,10 @@ class Task_model extends CI_Model
 
     public function updateOneTaskModel($todoidTask, $todoDescription, $todoDateDebut, $todoDateFin)
     {
-        $this->db->where('id', $todoidTask)->
-        $this->set('description', $todoDescription);
-        $this->set('date_debut', $todoDateDebut);
-        $this->set('date_fin', $todoDateFin);
+        $this->db->where('id', $todoidTask);
+        $this->db->set('description', $todoDescription);
+        $this->db->set('date_debut', $todoDateDebut);
+        $this->db->set('date_fin', $todoDateFin);
         $this->db->update($this->todoTableTask);
     }
 }
