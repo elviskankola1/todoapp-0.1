@@ -34,7 +34,24 @@ class Welcome extends CI_Controller
     {
         $todoidTask = $this->uri->segment(3);
         if ($todoidTask) {
+            $this->tache->deleteOneTaskModel($todoidTask);
             redirect($_SERVER['HTTP_REFERER']);
+        } else {
+            redirect($_SERVER['HTTP_REFERER']);
+        }
+    }
+
+    public function detailTask()
+    {
+        $todoidTask = $this->uri->segment(3);
+        $todoData['taskForId'] = $this->tache->getOneTaskModel($todoidTask);
+        $this->load->view('detail_task', $todoData);
+    }
+
+    public function updateOneTask()
+    {
+        $todoidTask = $this->uri->segment(3);
+        if ($todoidTask) {
         } else {
             redirect($_SERVER['HTTP_REFERER']);
         }
