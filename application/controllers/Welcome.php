@@ -22,7 +22,7 @@ class Welcome extends CI_Controller
             $todoDateFin = $this->input->post('datefin');
 
             $this->tache->addTaskModel($todoDescription, $todoDateDebut, $todoDateFin);
-            $todosucces['satisfaction'] = 'une nouvelle tachee a ete creee';
+            $todoSucces['satisfaction'] = 'une nouvelle tachee a ete creee';
             $this->session->set_flashdata($todosucces);
             $this->index();
         } else {
@@ -59,9 +59,12 @@ class Welcome extends CI_Controller
             $todoDescriptionTask = $this->input->post('description');
             $todoDateDebut = $this->input->post('debut');
             $todoDateFin = $this->input->post('fin');
+            $todoSucces['satisfaaction'] = 'update reussi';
+            $this->session->set_flashdata($todoSucces);
             $this->tache->updateOneTaskModel($todoidTask, $todoDescriptionTask, $todoDateDebut, $todoDateFin);
-        } else {
             redirect($_SERVER['HTTP_REFERER']);
+        } else {
+            $this->detailTask();
         }
     }
 }
