@@ -15,8 +15,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <h2><?php echo $this->session->satisfaction; ?></h2><hr>
 <?php if ($task):?>
 <?php foreach ($task as $value):?>
+	<hr>
 	<p><?php echo $value->description; ?>     <?php echo $value->date_debut; ?>     /    <?php echo $value->date_fin; ?></p>
-	
+	<a href="<?php echo site_url('welcome/deleteOneTask/').$value->id; ?>"><h2>X</h2></a>
+	<hr>
 <?php endforeach; ?>
 <?php else:?>
 	<h2>Aucune Tache</h2>
