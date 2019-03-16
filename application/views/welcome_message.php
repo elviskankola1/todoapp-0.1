@@ -15,7 +15,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <?php if ($task):?>
 <?php foreach ($task as $value):?>
 	<p><?php echo $value->description; ?>     <?php echo $value->date_debut; ?>     /    <?php echo $value->date_fin; ?></p>
-
+	<?php echo $this->session->satisfaction; ?>
 <?php endforeach; ?>
 <?php else:?>
 	<h2>Aucune Tache</h2>
