@@ -59,10 +59,10 @@ class Welcome extends CI_Controller
             $todoDescriptionTask = $this->input->post('description');
             $todoDateDebut = $this->input->post('debut');
             $todoDateFin = $this->input->post('fin');
-            $todoSucces['satisfaaction'] = 'update reussi';
+            $todoSucces['satisfaction'] = 'update reussi';
             $this->session->set_flashdata($todoSucces);
             $this->tache->updateOneTaskModel($todoidTask, $todoDescriptionTask, $todoDateDebut, $todoDateFin);
-            redirect($_SERVER['HTTP_REFERER']);
+            redirect('welcome/index');
         } else {
             $this->detailTask();
         }
