@@ -22,7 +22,7 @@ class Welcome extends CI_Controller
             $todoDateFin = $this->input->post('datefin');
 
             $this->tache->addTaskModel($todoDescription, $todoDateDebut, $todoDateFin);
-            $succes['satisfaction'] = 'votre tache est creee';
+            $succes['satisfaction'] = 'une nouvelle tachee a ete creee';
             $this->session->set_flashdata($succes);
             $this->index();
         } else {
