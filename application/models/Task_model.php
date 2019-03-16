@@ -27,6 +27,11 @@ class Task_model extends CI_Model
         return $this->db->get($this->todoTableTask)->result();
     }
 
+    public function getOneTaskModel($todoidTask)
+    {
+        return $this->db->where('id', $todoidTask)->get($this->todoTableTask)->result();
+    }
+
     public function countTask()
     {
         return $this->db->count_all_results($this->todoTableTask);
@@ -35,5 +40,10 @@ class Task_model extends CI_Model
     public function deleteOneTaskModel($todoidTask)
     {
         return $this->db->where('id', $todoidTask)->delete($this->todoTableTask);
+    }
+
+    public function updateOneTaskModel($todoidTask, $todoDescription)
+    {
+        return $this->db->where('id', $todoidTask)->set('description', $todoDescription)->update($this->todoTableTask);
     }
 }
