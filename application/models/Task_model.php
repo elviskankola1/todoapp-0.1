@@ -67,10 +67,18 @@ class Task_model extends CI_Model
         return $this->db->count_all_results($this->todoTableTask);
     }
 
+    //------------------------------------------------------------------------------
+    /*
+        @param int $todoidTask
+        #specification: supprime une task en fonction de son id dans la table tache
+
+    */
     public function deleteOneTaskModel($todoidTask)
     {
-        return $this->db->where('id', $todoidTask)->delete($this->todoTableTask);
+        $this->db->where('id', $todoidTask)->delete($this->todoTableTask);
     }
+
+    //------------------------------------------------------------------------------------
 
     public function updateOneTaskModel($todoidTask, $todoDescription, $todoDateDebut, $todoDateFin)
     {
