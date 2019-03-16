@@ -29,4 +29,15 @@ class Welcome extends CI_Controller
             $this->load->view('creer_tache');
         }
     }
+
+    public function deleteOneTask()
+    {
+        $todoidTask = $this->uri->segment(3);
+        if ($todoidTask) {
+            $this->tache->deleteOneTaskModel($todoidTask);
+            redirect($_SERVER['HTTP_REFERER']);
+        } else {
+            redirect($_SERVER['HTTP_REFERER']);
+        }
+    }
 }
