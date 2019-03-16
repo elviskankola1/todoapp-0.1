@@ -50,8 +50,16 @@ class Welcome extends CI_Controller
 
     public function updateOneTask()
     {
-        $todoidTask = $this->uri->segment(3);
-        if ($todoidTask) {
+        $this->form_validation->set_rules('description', 'description', 'trim|required|min_length[5]');
+        $this->form_validation->set_rules('debut', 'date de debut', 'trim|required');
+        $this->form_validation->set_rules('fin', 'date de la fin', 'trim|required');
+
+        if ($this->form_validation->run()) {
+            $todoidTask = $this->input->post('id');
+            $todoDescriptionTask = $this->input->post('description');
+            $todoDateDebut = $this->input->post('debut');
+            $todoDateFin = $this->input->post('fin');
+            $this->tache->updateOneTaskModel($todoidTask, $todoDescriptionTask, $todoDateDebut, $todoDateFin);
         } else {
             redirect($_SERVER['HTTP_REFERER']);
         }
