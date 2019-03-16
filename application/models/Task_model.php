@@ -42,11 +42,26 @@ class Task_model extends CI_Model
         return $this->db->get($this->todoTableTask)->result();
     }
 
+    //----------------------------------------------------------------------
+
+    /*
+
+        @param int $todoidTask
+        @return object
+        #specification: reccupere une tache selon son id
+
+    */
     public function getOneTaskModel($todoidTask)
     {
         return $this->db->where('id', $todoidTask)->get($this->todoTableTask)->result();
     }
 
+    //----------------------------------------------------------------------------
+    /*
+        @return int
+        #specification: compte toutes les tasks dans la table tache
+
+    */
     public function countTask()
     {
         return $this->db->count_all_results($this->todoTableTask);
