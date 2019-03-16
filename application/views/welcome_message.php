@@ -10,7 +10,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body>
 
 
-<a href="">CREER UNE TASK</a>
+<a href="<?php echo site_url('welcome/addTask'); ?>">CREER UNE TASK</a>
 <h1><?php echo $nbtask; ?> Tache(s)</h1><hr>
 <?php if ($task):?>
 <?php foreach ($task as $value):?>
