@@ -20,6 +20,11 @@ class Welcome extends CI_Controller
             $todoDescription = strip_tags($this->input->post('description'));
             $todoDateDebut = $this->input->post('datedebut');
             $todoDateFin = $this->input->post('datefin');
+
+            $this->tache->addTaskModel($todoDescription, $todoDateDebut, $todoDateFin);
+            $succes['satisfaction'] = 'votre tache est creee';
+            $this->session->set_flashdata($succes);
+            $this->index();
         } else {
             $this->load->view('creer_tache');
         }
