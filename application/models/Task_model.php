@@ -11,6 +11,14 @@ class Task_model extends CI_Model
         parent::__construct();
     }
 
+    //-------------------------------------------------------------------------
+    /*
+        @param string $todoDescription
+        @param string $todoDateDebut
+        @param string $todoDateFin
+
+        #specification: ajoute une tache dans la table tache
+    */
     public function addTaskModel($todoDescription, $todoDateDebut, $todoDateFin)
     {
         $data = [
@@ -21,6 +29,13 @@ class Task_model extends CI_Model
 
         $this->db->insert($this->todoTableTask, $data);
     }
+
+    //------------------------------------------------------------------------
+    /*
+
+        @return  object
+        #specification: prend toutes les task dans la table tache
+    */
 
     public function getAllTaskModel()
     {
