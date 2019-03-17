@@ -71,6 +71,17 @@ class Welcome extends CI_Controller
 
     //------------------------------------------------------------------------
     /*
+        #specification: page detaillee d'une la task
+    */
+    public function detailDeleteTask()
+    {
+        $todoidTask = $this->uri->segment(3);
+        $todoData['taskForId'] = $this->tache->getOneTaskModel($todoidTask);
+        $this->load->view('detail_sup_task', $todoData);
+    }
+
+    //------------------------------------------------------------------------
+    /*
         #specification: permet de faire un update d'une task et redirige a la page
         principale
     */
