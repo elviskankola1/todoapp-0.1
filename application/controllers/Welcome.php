@@ -103,7 +103,7 @@ class Welcome extends CI_Controller
             $this->tache->updateOneTaskModel($todoidTask, $todoDescriptionTask, $todoDateDebut, $todoDateFin);
             redirect('welcome/index');
         } else {
-            $this->detailTask();
+            redirect('welcome/detailTask');
         }
     }
 }
