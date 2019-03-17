@@ -41,6 +41,12 @@ class Welcome extends CI_Controller
         }
     }
 
+    //-------------------------------------------------------------------------
+    /*
+        #specification: supprime une task et retourne sur la meme page
+
+    */
+
     public function deleteOneTask()
     {
         $todoidTask = $this->uri->segment(3);
