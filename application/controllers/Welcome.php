@@ -52,7 +52,7 @@ class Welcome extends CI_Controller
         $todoidTask = $this->uri->segment(3);
         if ($todoidTask) {
             $this->tache->deleteOneTaskModel($todoidTask);
-            redirect($_SERVER['HTTP_REFERER']);
+            redirect('welcome/index');
         } else {
             redirect($_SERVER['HTTP_REFERER']);
         }
