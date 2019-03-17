@@ -69,6 +69,11 @@ class Welcome extends CI_Controller
         $this->load->view('detail_task', $todoData);
     }
 
+    //------------------------------------------------------------------------
+    /*
+        #specification: permet de faire un update d'une task et redirige a la page
+        principale
+    */
     public function updateOneTask()
     {
         $this->form_validation->set_rules('description', 'description', 'trim|required|min_length[5]');
