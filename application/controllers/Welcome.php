@@ -34,7 +34,7 @@ class Welcome extends CI_Controller
 
             $this->tache->addTaskModel($todoDescription, $todoDateDebut, $todoDateFin);
             $todoSucces['satisfaction'] = 'une nouvelle tachee a ete creee';
-            $this->session->set_flashdata($todosucces);
+            $this->session->set_flashdata($todoSucces);
             $this->index();
         } else {
             $this->load->view('creer_tache');
