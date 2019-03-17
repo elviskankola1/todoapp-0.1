@@ -58,6 +58,10 @@ class Welcome extends CI_Controller
         }
     }
 
+    //------------------------------------------------------------------------
+    /*
+        #specification: page detaillee d'une la task
+    */
     public function detailTask()
     {
         $todoidTask = $this->uri->segment(3);
