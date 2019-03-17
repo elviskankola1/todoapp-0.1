@@ -52,6 +52,8 @@ class Welcome extends CI_Controller
         $todoidTask = $this->uri->segment(3);
         if ($todoidTask) {
             $this->tache->deleteOneTaskModel($todoidTask);
+            $todoSucces['satisfaction'] = 'une tache a ete supprimee';
+            $this->session->set_flashdata($todoSucces);
             redirect('welcome/index');
         } else {
             redirect($_SERVER['HTTP_REFERER']);
