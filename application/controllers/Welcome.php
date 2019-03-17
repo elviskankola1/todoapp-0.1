@@ -4,6 +4,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Welcome extends CI_Controller
 {
+    //--------------------------------------------------------------------
+    /*
+        #specification: la methode lancee en premier, elle represente la page de Taches
+
+    */
     public function index()
     {
         $data['task'] = $this->tache->getAllTaskModel();
