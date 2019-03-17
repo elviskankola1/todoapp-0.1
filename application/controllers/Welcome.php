@@ -16,6 +16,12 @@ class Welcome extends CI_Controller
         $this->load->view('welcome_message', $data);
     }
 
+    //----------------------------------------------------------------------
+    /*
+       #specification:cette methode represente la page de creation d'une task
+       et l'enregistrement de cette derniere.
+
+    */
     public function addTask()
     {
         $this->form_validation->set_rules('description', 'description', 'trim|required|min_length[5]');
